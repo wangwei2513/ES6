@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="anim"> Click here to start animation</div>
+  <script>
+    let times = 0
+    function animloop(twinkFun) {
+      twinkFun()
+      times++
+      setTimeout(() => {
+        animloop(twinkFun )
+      }, 500)
+    }
+    function twinkFun() {
+      console.log(times, 'times')
+    }
+    animloop(twinkFun)
+  </script>
+  <style>
+    #anim {
+      position: absolute;
+      left: 0px;
+      width: 150px;
+      height: 150px;
+      line-height: 150px;
+      background: aqua;
+      color: white;
+      border-radius: 10px;
+      padding: 1em;
+    }
+  </style>
+</body>
+
+</html>
